@@ -9,18 +9,46 @@ This distribution contains some templates to use with `mr.bob
 Templates
 =========
 
-The primary focus is creating the most basic templates, so a basic distribution
-template, a buildout template and a theme distribution (roughly in that order)
-will be the ones you will find here.
+The primary focus is creating a small set of high quality templates for plone
+development. The first ones on the list are:
 
-Currently working on:
+* basic distribution template (a two namespaces distribution).
+* buildout template (with all the bells and whistles for development and
+  testing.
+* diazo theme template.
 
-* basic_plone
 
-In the future (contributions welcome):
+plone_basic
+-----------
 
-* plone_buildout
-* plone_theme
+* Creates the distribution folder structure
+* profiles folder and files within it
+* Fill setup.py
+
+What's missing:
+
+* finishing setup.py
+* browser folder with sample view
+* interfaces.py
+* testing.py and tests folder
+* general configure.zcml
+* locales folder
+* top level docs folder (sphinx)
+* upgrades.zcml and upgrades.py
+* minimal buildout (?)
+* travis-ci (?) related files
+
+
+plone_buildout
+--------------
+
+Not even started, contributions welcome.
+
+
+plone_theme
+-----------
+
+Same here as `plone_buildout`, contributions welcome.
 
 
 Code and contributions

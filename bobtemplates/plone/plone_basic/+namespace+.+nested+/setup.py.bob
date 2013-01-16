@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+from setuptools import setup, find_packages
+
+
+version = '{{{ distribution.initial_version }}}'
+description = '{{{ distribution.short_description }}}'
+long_description = open('README.rst').read() + open('HISTORY.rst').read() + \
+    open('LICENSE').read()
+
+
+setup(
+    name='{{{ namespace }}}.{{{ nested }}}',
+    version=version,
+    description=description,
+    long_description=long_description,
+    classifiers=[
+        'Framework :: Plone',
+        'Programming Language :: Python',
+    ],
+    author='{{{ author.name }}}',
+    author_email='{{{ author.email }}}',
+    url='https://github.com/plone/{{{ namespace }}}.{{{ nested }}}',
+    license='GPL',
+    packages=find_packages(),
+    include_package_data=True,
+    zip_safe=False,
+    namespace_packages=['{{{ namespace }}}', ],
+    install_requires=[
+        'setuptools',
+        'Products.CMFPlone',
+        'five.grok',
+        'plone.app.dexterity',
+        'z3c.jbot'
+    ],
+    extras_require={
+        'test': [
+            'plone.app.testing',
+        ]
+    },
+    entry_points="""
+    [z3c.autoinclude.plugin]
+    target = plone
+    """,
+)

@@ -1,0 +1,21 @@
+============
+Introduction
+============
+
+Welcome to {{{ namespace }}}.{{{ nested }}}!
+
+This distribution is about {{{ distribution.short_description }}}
+
+
+Testing
+=======
+
+{{{ namespace }}}.{{{ nested }}} is tested with travis:
+
+.. image:: https://travis-ci.org/plone/plone.app.widgets.png?branch=master
+
+
+Credits
+=======
+
+Author: {{{ author.name }}} <{{{ author.email }}}>

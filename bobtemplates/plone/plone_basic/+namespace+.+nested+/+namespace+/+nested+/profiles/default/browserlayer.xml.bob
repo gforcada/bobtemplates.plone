@@ -1,0 +1,4 @@
+<layers>
+ <layer name="{{{ namespace }}}.{{{ nested }}}"
+        interface="{{{ namespace }}}.{{{ nested }}}.interfaces.IBrowserLayer" />
+</layers>

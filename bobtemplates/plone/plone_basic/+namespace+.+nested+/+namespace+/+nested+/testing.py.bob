@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+import doctest
+from plone.app.testing import (
+    applyProfile,
+    PLONE_FIXTURE,
+    PloneSandboxLayer,
+)
+from plone.app.testing.layers import (
+    FunctionalTesting,
+    IntegrationTesting,
+)
+from Products.CMFCore.utils import getToolByName
+from zope.configuration import xmlconfig
+
+
+class {{{ namespace|capitalize }}}{{{ nested|capitalize }}}Testing(PloneSandboxLayer):
+    defaultBases = (PLONE_FIXTURE, )
+
+    def setUpZope(self, app, configurationContext):
+        # load ZCML
+        import {{{ namespace }}}.{{{ nested }}}
+        xmlconfig.file('configure.zcml', {{{ namespace }}}.{{{ nested }}},
+                       context=configurationContext)
+
+    def setUpPloneSite(self, portal):
+        # install into the Plone site
+        applyProfile(portal, '{{{ namespace }}}.{{{ nested }}}:default')
+
+
+{{{ namespace|upper }}}{{{ nested|upper }}}_FIXTURE = {{{ namespace|capitalize }}}{{{ nested|capitalize }}}Testing()
+{{{ namespace|upper }}}{{{ nested|upper }}}_INTEGRATION_TESTING = IntegrationTesting(
+    bases=({{{ namespace|upper }}}{{{ nested|upper }}}_FIXTURE, ),
+    name='{{{ namespace|capitalize }}}{{{ nested|capitalize }}}Layer:Integration'
+)
+{{{ namespace|upper }}}{{{ nested|upper }}}_FUNCTIONAL_TESTING = FunctionalTesting(
+    bases=({{{ namespace|upper }}}{{{ nested|upper }}}_FIXTURE, ),
+    name='{{{ namespace|capitalize }}}{{{ nested|capitalize }}}Layer:Functional'
+)
+
+optionflags = (doctest.ELLIPSIS | doctest.NORMALIZE_WHITESPACE)

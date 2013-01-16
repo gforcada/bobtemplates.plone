@@ -1,0 +1,10 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="{{{ namespace }}}.{{{ nested }}}">
+
+    <permission
+        id="{{{ namespace }}}.{{{ nested }}}.more_power"
+        title="{{{ namespace }}}.{{{ nested }}}: more power"
+        />
+
+</configure>

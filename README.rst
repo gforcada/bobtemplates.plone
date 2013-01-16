@@ -23,20 +23,26 @@ plone_basic
 
 * Creates the distribution folder structure
 * profiles folder and files within it
-* Fill setup.py
+* Set ups setup.py and other top level files (LICENSE, HISTORY.rst, README.rst)
+* general configure.zcml
+* locales folder
+* browser folder
+* setuphandlers.py
+* permissions.zcml with a dummy permission
+* upgrades.zcml and upgrades.py
+* interfaces.py
+* testing.py and tests folder
+* minimal buildout with develop, testing and coverage report
+* travis-ci integration
 
 What's missing:
 
-* finishing setup.py
-* browser folder with sample view
-* interfaces.py
-* testing.py and tests folder
-* general configure.zcml
-* locales folder
-* top level docs folder (sphinx)
-* upgrades.zcml and upgrades.py
-* minimal buildout (?)
-* travis-ci (?) related files
+* resources folder (static folder registered with grok)
+* jbot overrides folder XXX override something like the portal logo or so
+* top level docs folder (?)
+* add tests that check the resource folder
+* add tests that check the browser view
+* add tests that check the jbot override
 
 
 plone_buildout
